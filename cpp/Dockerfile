@@ -37,7 +37,7 @@ ARG CONCURRENT_PROCESSES=1
 ENV BOOST_VERSION ${BOOST_VERSION}
 RUN mkdir -p ${BOOST_DIR} \
     && cd ${BOOST_DIR} \
-    && curl -L --retry 3 "https://dl.bintray.com/boostorg/release/${BOOST_VERSION}/source/boost_1_71_0.tar.gz" -o boost.tar.gz \
+    && curl -L --retry 3 "https://boostorg.jfrog.io/artifactory/main/release/${BOOST_VERSION}/source/boost_1_71_0.tar.gz" -o boost.tar.gz \
     && echo "${BOOST_CHECKSUM}  boost.tar.gz" | sha256sum -c \
     && tar -xzf boost.tar.gz --strip 1 \
     && cp -r boost /usr/include/boost \
